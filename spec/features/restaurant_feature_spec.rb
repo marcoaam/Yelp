@@ -2,13 +2,13 @@ require 'rails_helper'
 
 feature 'Without restaurants' do
 
-	scenario 'No Restaurants have been added' do
+	scenario 'Shows that no Restaurants have been added' do
 		visit '/restaurants'
 		expect(page).to have_content 'No restaurants have been added'
 		expect(page).to have_link 'Add Restaurant'
 	end
 
-	scenario ' can add a new restaurant' do
+	scenario 'A new restaurant can be added' do
 		visit '/restaurants'
 		click_link 'Add Restaurant'
 
