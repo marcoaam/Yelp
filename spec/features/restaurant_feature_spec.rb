@@ -1,40 +1,47 @@
 require 'rails_helper'
 
 feature 'Without restaurants' do
+
 	scenario 'No Restaurants have been added' do
 		visit '/restaurants'
 		expect(page).to have_content 'No restaurants have been added'
 		expect(page).to have_link 'Add Restaurant'
 	end
-	
-end
 
-feature 'Restaurant with a name' do
-
-	before(:each) do
-		Restaurant.create(name: 'Burger King')
-	end
-
-	scenario 'Restaurants have been added' do
+	scenario ' can add a new restaurant' do
 		visit '/restaurants'
-		expect(page).not_to have_content 'No restaurants have been added'
-		expect(page).to have_content 'Burger King'
-		expect(page).to have_link 'Add Restaurant'
+		click_link 'Add Restaurant'
+
+		fill_in 'Name', with: 'KFC'
+		fill_in 'Cuisine', with: 'Fast food'
+		click_button 'Create Restaurant'
+		expect(page).to have_content 'KFC'
+		expect(page).to have_content 'Fast food'
 	end
 	
 end
 
-feature 'Restaurant with a name and cuisine' do
+feature 'With restaurants' do
 
 	before(:each) do
 		Restaurant.create(name: 'Burger King', cuisine: 'Fast food')
 	end
 
-	scenario 'Restaurants have been added' do
+	scenario 'Shows all restaurants' do
 		visit '/restaurants'
 		expect(page).not_to have_content 'No restaurants have been added'
 		expect(page).to have_content 'Burger King Fast food'
 		expect(page).to have_link 'Add Restaurant'
+	end
+
+	scenario 'can edit a restaurant' do
+		visit '/restaurants'
+		click_link 'Edit'
+		fill_in 'Name', with: 'KFC'
+		fill_in 'Cuisine', with: 'Fast food'
+		click_button 'Update Restaurant'
+		expect(page).to have_content 'KFC'
+		expect(page).to have_content 'Fast food'
 	end
 	
 end
