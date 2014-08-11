@@ -30,7 +30,8 @@ feature 'With restaurants' do
 	scenario 'Shows all restaurants' do
 		visit '/restaurants'
 		expect(page).not_to have_content 'No restaurants have been added'
-		expect(page).to have_content 'Burger King Fast food'
+		expect(page).to have_content 'Burger King'
+		expect(page).to have_content 'Fast food'
 		expect(page).to have_link 'Add Restaurant'
 	end
 
@@ -42,6 +43,12 @@ feature 'With restaurants' do
 		click_button 'Update Restaurant'
 		expect(page).to have_content 'KFC'
 		expect(page).to have_content 'Fast food'
+	end
+
+	scenario 'can delete a restaurant' do
+		visit '/restaurants'
+		click_link 'Delete'
+		expect(page).not_to have_content 'Burger King'
 	end
 	
 end

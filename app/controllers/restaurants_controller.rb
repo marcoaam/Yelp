@@ -22,4 +22,11 @@ class RestaurantsController < ApplicationController
     @restaurant.update(params[:restaurant].permit(:name, :cuisine))
     redirect_to '/restaurants'
 	end
+
+	def destroy
+		@restaurant = Restaurant.find(params[:id])
+		@restaurant.destroy
+		redirect_to('/restaurants')
+	end
+	
 end
