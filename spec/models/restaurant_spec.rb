@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Restaurant, :type => :model do
 
 	it "doesn't have any Restaurant if it hasn't been added" do
-		expect(Restaurant.all.count).to eq 0
+		expect(Restaurant.all.any?).to eq false
 	end
 
   it 'can add a Restaurant providing the name' do
@@ -13,7 +13,7 @@ RSpec.describe Restaurant, :type => :model do
   end
 
   it 'can add a Restaurant providing the name and cuisine' do
-		Restaurant.create(:name => 'Taco bell', :cuisine => 'Mexican')
+		Restaurant.create(:name => 'Taco Bell', :cuisine => 'Mexican')
 		expect(Restaurant.all.count).to eq 1
   	expect(Restaurant.first.name).to eq 'Taco Bell'
   end
