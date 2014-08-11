@@ -48,6 +48,7 @@ feature 'With restaurants' do
 	scenario 'can delete a restaurant' do
 		visit '/restaurants'
 		click_link 'Delete'
+		expect(page).to have_content 'Restaurant deleted successfully'
 		expect(page).not_to have_content 'Burger King'
 	end
 	
