@@ -41,6 +41,7 @@ feature 'With restaurants' do
 		fill_in 'Name', with: 'KFC'
 		fill_in 'Cuisine', with: 'Fast food'
 		click_button 'Update Restaurant'
+		expect(page).to have_content 'Restaurant updated successfully'
 		expect(page).to have_content 'KFC'
 		expect(page).to have_content 'Fast food'
 	end

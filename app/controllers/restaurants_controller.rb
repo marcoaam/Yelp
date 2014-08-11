@@ -20,6 +20,7 @@ class RestaurantsController < ApplicationController
 	def update
     @restaurant = Restaurant.find(params[:id])
     @restaurant.update(params[:restaurant].permit(:name, :cuisine))
+    flash[:notice] = 'Restaurant updated successfully'
     redirect_to '/restaurants'
 	end
 
