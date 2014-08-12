@@ -8,7 +8,6 @@ describe 'Reviews a Restaurant' do
 
 	it 'Creates a review filling a form with the thought and rating' do
 		visit restaurants_path
-		click_link 'Review'
 		fill_in 'Thoughts', with: 'Great place!!!'
 		select '3', from: 'Rating'
 		click_button 'Create Review'
