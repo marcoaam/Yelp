@@ -31,6 +31,12 @@ RSpec.describe Restaurant, :type => :model do
 	  	expect(restaurant).to have(1).error_on(:name)
 	  end
 
+	  it 'gets a error if the same restaurant was already added' do
+	  	Restaurant.create(:name => 'Burger King')
+	  	restaurant = Restaurant.create(:name => 'Burger King')
+	  	expect(restaurant).to have(1).error_on(:name)
+	  end
+
 	end
 
 end
