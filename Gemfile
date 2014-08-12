@@ -16,6 +16,7 @@ gem 'coffee-rails', '~> 4.0.0'
 group :development, :test do
 	gem 'rspec-rails'
 	gem 'capybara'
+	gem 'rspec-collection_matchers'
 end
 
 # Use jquery as the JavaScript library

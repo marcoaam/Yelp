@@ -8,6 +8,17 @@ feature 'Without restaurants' do
 		expect(page).to have_link 'Add Restaurant'
 	end
 
+	scenario 'A new restaurant can not be added with a invalid format' do
+		visit '/restaurants'
+		click_link 'Add Restaurant'
+
+		fill_in 'Name', with: 'kf'
+		fill_in 'Cuisine', with: 'Fast food'
+		click_button 'Create Restaurant'
+		expect(page).not_to have_content 'kf'
+		expect(page).not_to have_content 'Fast food'
+	end
+
 	scenario 'A new restaurant can be added' do
 		visit '/restaurants'
 		click_link 'Add Restaurant'
@@ -21,7 +32,7 @@ feature 'Without restaurants' do
 	
 end
 
-feature 'With restaurants' do
+feature 'With restaurants added' do
 
 	before(:each) do
 		Restaurant.create(name: 'Burger King', cuisine: 'Fast food')
