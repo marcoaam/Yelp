@@ -7,7 +7,7 @@ feature 'Review Likes' do
 		restaurant.reviews.create(thoughts: 'good restaurant', rating: '4')
 	end
 
-	scenario 'like a comment' do
+	scenario 'like a comment', js: true do
 		visit restaurants_path
 		click_link 'Like'
 		expect(page).to have_content 'likes:  1'
