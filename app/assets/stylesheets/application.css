@@ -17,6 +17,7 @@
 body {
   font: Helvetica;
   background-color: white;
+  font-size: 14;
 }
 
 
@@ -24,8 +25,17 @@ header {
 	display: flex;
 	background-color: orange;
 	height: 50px;
+	padding: 5px;
 }
 
 div.logo {
-	font-size: 30px;
+	font-size: 35px;
+	font-family: Helvetica;
+	color: white;
+	font-weight: bold;
+}
+
+h1, h2 {
+	font-family: Helvetica;
+	font-size: 12px;
 }

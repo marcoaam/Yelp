@@ -7,12 +7,14 @@ describe 'Reviews a Restaurant' do
 	end
 
 	it 'Creates a review filling a form with the thought and rating' do
-		visit restaurants_path
-		fill_in 'Thoughts', with: 'Great place!!!'
-		select '3', from: 'Rating'
-		click_button 'Create Review'
-		expect(current_path).to eq restaurants_path
+		create_review('Great place!!!', '3')
 		expect(page).to have_content 'Great place!!! (3)'
+	end
+
+	it 'Shows the average rating of the restaurants reviews' do
+		create_review('Not bad', '3')
+		create_review('Great place!!!', '5')
+		expect(page).to have_content 'Average rating: (4.0)'
 	end
 
 end
