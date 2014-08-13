@@ -12,8 +12,10 @@
 					<% restaurant.reviews.each do |review| %>
 						<li><%= "#{review.thoughts} (#{star_rating(review.rating)})" %>
 							<%= "- Posted #{time_ago_in_words(review.created_at)} ago "%>
-							<%= "likes: #{review.likes.count}" %>
-							<%= link_to('Like', review_likes_path(review), method: :post) %></li>
+							<span class="likes_count">
+								<%= "likes: #{review.likes.count}" %>
+							</span>
+							<%= link_to('Like', review_likes_path(review), class: 'like') %></li>
 					<% end %>
 				</ul>
 				<%= render 'reviews/reviewform', restaurant: restaurant %>
