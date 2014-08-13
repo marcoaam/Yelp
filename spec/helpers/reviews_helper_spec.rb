@@ -11,5 +11,16 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe ReviewsHelper, :type => :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+	it 'returns N/A if there is no rating' do
+		expect(helper.star_rating('N/A')).to eq 'N/A'
+	end
+
+  it 'returns five full stars if the rating is 5 or 5.0' do
+  	expect(helper.star_rating(5.0)).to eq '★★★★★'
+  end
+
+  it 'returns four full stars and one empty if the rating is 4 or 4.0' do
+  	expect(helper.star_rating(4.0)).to eq '★★★★☆'
+  end
 end
