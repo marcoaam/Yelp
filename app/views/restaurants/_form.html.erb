@@ -9,7 +9,7 @@
     </ul>
   </div>
 <% end %>
-
+<div class="add_restaurant_form">
 <%= form_for @restaurant do |f| %>
 	<%= f.label :name %>
 	<%= f.text_field :name %><br>
@@ -17,3 +17,4 @@
 	<%= f.text_field :cuisine %>
 	<%= f.submit %>
 <%end%>
+</div>

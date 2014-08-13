@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 div.restaurant {
-	width: 400px;
+	width: 500px;
 	margin: 10px auto;
 	padding: 10px;
 	background-color: white;
@@ -18,4 +18,16 @@ div.restaurant a {
 	text-decoration: none;
 	font-family: Helvetica;
 	font-size: 11px;
+}
+
+div.add_restaurant_form {
+	width: 300px;
+	margin: 20px auto;
+	display: flex;
+	background-color: orange;
+	border-radius: 10px;
+	padding: 10px;
+	color: white;
+	font-family: helvetica;
+	font-size: 12px;
 }

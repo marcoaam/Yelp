@@ -16,12 +16,13 @@
 								<%= "likes: #{review.likes.count}" %>
 							</span>
 							<%= link_to('Like', review_likes_path(review), class: 'like') %></li>
+							<hr>
 					<% end %>
 				</ul>
 				<%= render 'reviews/reviewform', restaurant: restaurant %>
 	</div>
+	<hr>
 	<%end%>
 <% else %>
 	<h2>No restaurants have been added<h2>
 <%end %>
-<%= link_to('Add Restaurant', new_restaurant_path) %>
