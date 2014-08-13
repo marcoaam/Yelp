@@ -1,3 +1,21 @@
 // Place all the styles related to the restaurants controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+div.restaurant {
+	width: 400px;
+	margin: 10px auto;
+	padding: 10px;
+	background-color: white;
+	border-radius: 10px;
+}
+
+div.restaurant a {
+	margin: 5px;
+	border-radius: 5px;
+	padding: 5px;
+	background-color: red;
+	color: white;
+	text-decoration: none;
+	font-family: Helvetica;
+	font-size: 11px;
+}

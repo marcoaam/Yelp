@@ -5,6 +5,10 @@ Rails.application.routes.draw do
     resources :reviews
   end
 
+  resources :reviews do
+    resources :likes
+  end
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 

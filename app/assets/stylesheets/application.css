@@ -23,7 +23,8 @@ body {
 
 header {
 	display: flex;
-	background-color: orange;
+	background-color: white;
+	border-bottom: 3px solid red;
 	height: 50px;
 	padding: 5px;
 }
@@ -31,11 +32,21 @@ header {
 div.logo {
 	font-size: 35px;
 	font-family: Helvetica;
-	color: white;
-	font-weight: bold;
+	color: red;
 }
 
-h1, h2 {
+h2 {
+	font-family: Helvetica;
+	font-size: 25px;
+	color: orange;
+}
+
+h3 {
+	font-family: Helvetica;
+	font-size: 15px;
+}
+
+li {
 	font-family: Helvetica;
 	font-size: 12px;
 }
