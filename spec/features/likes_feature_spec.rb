@@ -10,7 +10,7 @@ feature 'Review Likes' do
 	scenario 'like a comment' do
 		visit restaurants_path
 		click_link 'Like'
-		expect(page).to have_content 'total: 1'
+		expect(page).to have_content 'likes:  1'
 	end
 
 end

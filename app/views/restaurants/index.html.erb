@@ -11,7 +11,8 @@
 				<ul>
 					<% restaurant.reviews.each do |review| %>
 						<li><%= "#{review.thoughts} (#{star_rating(review.rating)})" %>
-							<%= "total: #{review.likes.count}" %>
+							<%= "- Posted #{time_ago_in_words(review.created_at)} ago "%>
+							<%= "likes: #{review.likes.count}" %>
 							<%= link_to('Like', review_likes_path(review), method: :post) %></li>
 					<% end %>
 				</ul>
