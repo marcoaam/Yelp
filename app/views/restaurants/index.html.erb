@@ -7,9 +7,9 @@
 
 				<%= link_to('Edit', edit_restaurant_path(restaurant)) %>
 				<%= link_to('Delete', restaurant_path(restaurant), method: :delete) %>
-				<%= link_to('Show Reviews') %>
+				<%= link_to('Show Reviews', '#', class: 'show_reviews_btn') %>
 
-				<ul>
+				<ul class='restaurant_reviews'>
 					<% restaurant.reviews.each do |review| %>
 						<li><%= "#{review.thoughts} (#{star_rating(review.rating)})" %>
 							<%= "- Posted #{time_ago_in_words(review.created_at)} ago "%>
@@ -19,8 +19,8 @@
 							<%= link_to('Like', review_likes_path(review), class: 'like') %></li>
 							<hr>
 					<% end %>
+					<%= render 'reviews/reviewform', restaurant: restaurant %>
 				</ul>
-				<%= render 'reviews/reviewform', restaurant: restaurant %>
 	</div>
 	<hr>
 	<%end%>
