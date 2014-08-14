@@ -2,6 +2,11 @@ require 'rails_helper'
 
 feature 'Without restaurants' do
 
+	before(:each) do
+		marco = User.create(email: 'm@m.com', password: '12345678', password_confirmation: '12345678')
+		login_as marco
+	end
+
 	scenario 'Shows that no Restaurants have been added' do
 		visit '/restaurants'
 		expect(page).to have_content 'No restaurants have been added'
@@ -29,13 +34,15 @@ feature 'Without restaurants' do
 		expect(page).to have_content 'KFC'
 		expect(page).to have_content 'Fast food'
 	end
-	
+		
 end
 
 feature 'With restaurants added' do
 
 	before(:each) do
 		Restaurant.create(name: 'Burger King', cuisine: 'Fast food')
+		marco = User.create(email: 'm@m.com', password: '12345678', password_confirmation: '12345678')
+		login_as marco
 	end
 
 	scenario 'Shows all restaurants' do

@@ -17,4 +17,11 @@ describe 'Reviews a Restaurant' do
 		expect(page).to have_content 'Average rating: (★★★★☆)'
 	end
 
+	# it 'Shows all reviews after click a button', js: true do
+	# 	create_review('Not bad', '3')
+	# 	expect(page).not_to have_content('Not bad')
+	# 	click_link ('Show Reviews')
+	# 	expect(page).to have_content('Not bad')
+	# end
+
 end

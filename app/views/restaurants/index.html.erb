@@ -7,6 +7,7 @@
 
 				<%= link_to('Edit', edit_restaurant_path(restaurant)) %>
 				<%= link_to('Delete', restaurant_path(restaurant), method: :delete) %>
+				<%= link_to('Show Reviews') %>
 
 				<ul>
 					<% restaurant.reviews.each do |review| %>
