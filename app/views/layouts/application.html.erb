@@ -11,6 +11,9 @@
 	<header>
 		<div class="logo">Restaurant Review</div>
 		<%= link_to('Add Restaurant', new_restaurant_path, class: 'add_restaurant_btn') %>
+		<% if current_user %>
+			<%= link_to('Sign out', destroy_user_session_path, method: :delete, class: 'sign_out_btn') %>
+		<% end %>
 	</header>
 
 <section class="main_content">

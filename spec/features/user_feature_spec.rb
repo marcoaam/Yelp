@@ -15,4 +15,13 @@ feature 'Users' do
 		click_button 'Sign up'
 		expect(User.first.email).to eq 'm@m.com'
 	end
+
+	scenario 'can sign out' do
+		marco = User.create(email: 'm@m.com', password: '12345678', password_confirmation: '12345678')
+		login_as marco
+		visit '/restaurants'
+		click_link 'Sign out'
+		expect(page).to have_content 'Signed out successfully'
+	end
+
 end
