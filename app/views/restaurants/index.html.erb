@@ -21,7 +21,8 @@
 							<%= "- Posted #{time_ago_in_words(review.created_at)} ago "%>
 							<span class="likes_count">
 								<%= "likes: #{review.likes.count}" %>
-							</span><%= link_to('Like', review_likes_path(review), class: 'like') %><br><%= "#{review.thoughts}" %>
+							</span><%= link_to('Like', review_likes_path(review), class: 'like') %><br>
+							<%= review.thoughts %>
 							</li>
 							<hr>
 					<% end %>

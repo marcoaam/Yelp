@@ -9,7 +9,8 @@ describe 'Reviews a Restaurant' do
 		end
 
 		it 'Creates a review filling a form with the thought and rating' do
-			expect(page).to have_content 'Great place!!! (★★★☆☆)'
+			expect(page).to have_content 'Great place!!!'
+			expect(page).to have_content '(★★★☆☆)'
 		end
 
 		it 'Shows the average rating of the restaurants reviews' do

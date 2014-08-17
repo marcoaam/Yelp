@@ -20,7 +20,11 @@
 	</header>
 
 <section class="main_content">
-<%= notice %>
+	<% if notice %>
+	<div class="notice" >
+		<%= notice %>
+	</div>
+	<% end %>
 <%= yield %>
 </section>
 

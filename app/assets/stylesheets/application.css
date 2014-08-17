@@ -99,3 +99,12 @@ h3 {
 	font-family: Helvetica;
 	font-size: 15px;
 }
+
+.notice {
+	color: white;
+	background-color: lightgreen;
+	padding: 5px;
+	font-size: 15px;
+	font-family: helvetica;
+	margin: 30px auto;
+}

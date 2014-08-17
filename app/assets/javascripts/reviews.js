@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-	$('.restaurant .show_reviews_btn').click(function(event) {
+	$('.show_reviews_btn').click(function(event) {
 
 		event.preventDefault();
 		if($(this).text() === 'Show Reviews') {
