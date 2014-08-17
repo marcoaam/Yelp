@@ -17,7 +17,7 @@
 
 body {
   font: Helvetica;
-  background-color: white;
+  background-color: lightgray;
   font-size: 14;
 }
 
@@ -84,23 +84,18 @@ div.logo {
 }
 
 .main_content {
-	max-width: 800px;
+	max-width: 500px;
 	margin: 0 auto;
 }
 
 h2 {
-	font-family: Helvetica;
-	font-size: 25px;
-	color: orange;
+	font-family: Gloria Hallelujah;
+	font-size: 20px;
+	font-weight: bold;
+	color: black;
 }
 
 h3 {
 	font-family: Helvetica;
 	font-size: 15px;
-}
-
-li {
-	list-style: none;
-	font-family: Helvetica;
-	font-size: 12px;
 }

@@ -1,8 +1,14 @@
 	<% if @restaurants.any? %>
 	<% @restaurants.each do |restaurant| %>
+			<div class="restaurant_name">
+			<h2><%= restaurant.name %>
+				<% if restaurant.cuisine %>
+				<%= "- #{restaurant.cuisine}" %></h2>
+				<% end %>
+			</div>
 	<div class="restaurant">
-		<h2><%= restaurant.name %>
-				<%= restaurant.cuisine %></h2>
+
+			<div class="restaurant_rating">
 				<h3>Average rating: (<%= star_rating(restaurant.average_rating) %>)</h3>
 
 				<%= link_to('Edit', edit_restaurant_path(restaurant)) %>
@@ -11,16 +17,17 @@
 
 				<ul class='restaurant_reviews'>
 					<% restaurant.reviews.each do |review| %>
-						<li><%= "#{review.thoughts} (#{star_rating(review.rating)})" %>
+						<li> <%= "(#{star_rating(review.rating)})" %>
 							<%= "- Posted #{time_ago_in_words(review.created_at)} ago "%>
 							<span class="likes_count">
 								<%= "likes: #{review.likes.count}" %>
-							</span>
-							<%= link_to('Like', review_likes_path(review), class: 'like') %></li>
+							</span><%= link_to('Like', review_likes_path(review), class: 'like') %><br><%= "#{review.thoughts}" %>
+							</li>
 							<hr>
 					<% end %>
 					<%= render 'reviews/reviewform', restaurant: restaurant %>
 				</ul>
+				</div>
 	</div>
 	<hr>
 	<%end%>
