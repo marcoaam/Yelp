@@ -2,10 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 div.restaurant {
-	width: 500px;
+	width: 700px;
 	margin: 10px auto;
 	padding: 10px;
 	background-color: white;
+	border: 2px solid gray;
 	border-radius: 10px;
 }
 

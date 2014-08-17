@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require normalize-rails
  */
 
 body {
@@ -22,16 +23,28 @@ body {
 
 
 header {
+	background: #a90329; /* Old browsers */
+	background: -moz-linear-gradient(top,  #a90329 0%, #8f0222 44%, #6d0019 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a90329), color-stop(44%,#8f0222), color-stop(100%,#6d0019)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #a90329 0%,#8f0222 44%,#6d0019 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #a90329 0%,#8f0222 44%,#6d0019 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #a90329 0%,#8f0222 44%,#6d0019 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #a90329 0%,#8f0222 44%,#6d0019 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#6d0019',GradientType=0 ); /* IE6-9 */
+
 	display: flex;
-	background-color: white;
-	border-bottom: 3px solid red;
-	height: 50px;
+	height: 70px;
 	padding: 5px;
+}
+
+.header_content {
+	max-width: 900px;
+	margin: 0 auto;
 }
 
 .add_restaurant_btn {
 	text-decoration: none;
-	margin: 0 20px 0 auto;
+	float: right;
 	font-size: 15px;
 	font-family: Helvetica;
 	background-color: orange;
@@ -39,9 +52,12 @@ header {
 	padding: 5px;
 	height: 20px;
 	border-radius: 5px;
+	margin-top: 10px;
 }
 
 .sign_out_btn {
+	margin: 10px 20px 0 auto;
+	float: right;
 	text-decoration: none;
 	font-size: 15px;
 	font-family: Helvetica;
@@ -53,10 +69,23 @@ header {
 }
 
 div.logo {
+/*	-webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: white;*/
 	float: left;
 	font-size: 35px;
-	font-family: Helvetica;
-	color: red;
+	font-family: 	Gloria Hallelujah;
+	color: white;
+	text-shadow:
+	  3px 3px 0 #000,
+	  -1px -1px 0 #000,  
+	  1px -1px 0 #000,
+	  -1px 1px 0 #000,
+		1px 1px 0 #000;
+}
+
+.main_content {
+	max-width: 800px;
+	margin: 0 auto;
 }
 
 h2 {
