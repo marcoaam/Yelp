@@ -34,10 +34,10 @@ Open your browser at http://localhost:3000/
 How to test it
 -------------
 
-- You must have firefox web browser installed
-
 	cd Yelp
 	bundle install
 	rspec
+
+You must have firefox web browser installed to be able to test properly.
 
 
