@@ -19,7 +19,7 @@ Technologies used:
 - RSpec
 - Capybara
 - Devise
-- Postgres
+- PostgreSQL
 
 How to run it
 -------------
