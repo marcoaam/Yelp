@@ -38,6 +38,4 @@ How to test it
 	bundle install
 	rspec
 
-You must have firefox web browser installed to be able to test properly.
-
 
