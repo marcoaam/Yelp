@@ -1,3 +1,5 @@
+[![Code Climate](https://codeclimate.com/github/marcoaam/Yelp/badges/gpa.svg)](https://codeclimate.com/github/marcoaam/Yelp) [![Test Coverage](https://codeclimate.com/github/marcoaam/Yelp/badges/coverage.svg)](https://codeclimate.com/github/marcoaam/Yelp)
+
 Yelp clone app
 =============
 
